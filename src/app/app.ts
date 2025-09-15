@@ -15,11 +15,14 @@ export class App {
   protected readonly title = signal('Task & Tracker Unipar');
 
   users = DUMMY_USERS;
-  selectedUserId?: string; //usar mais tarde pra selecionar o usuario
+  selectedUserId?: string;
 
   get selectedUser() {
     return this.users.find(user =>
       user.id === this.selectedUserId)!;
   }
 
+  onSelectUser(id: string) {
+    this.selectedUserId = id;
+  }
 }

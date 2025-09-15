@@ -1,6 +1,7 @@
 <app-card>
   <div>
-    <button>
+    <button [class.active]="selected"
+            (click)="onSelectUser()">
       <img [src]="'assets/users/' + user.avatar" alt="Usuário"/>
       <span>{{ user.name }}</span>
     </button>
