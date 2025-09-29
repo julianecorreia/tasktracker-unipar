@@ -12,14 +12,12 @@ import {Task} from '../task.model';
   styleUrl: './task.css'
 })
 export class TaskUnit {
-
   @Input({required: true}) task!: Task;
 
-  //injeta a dependência de TasksService (igual construtor)
-  private taskService = inject(TasksService);
+  private tasksService = inject(TasksService);
 
   onCompleteTask() {
-    //TODO
+    this.tasksService.removeTask(this.task.id);
   }
 
 }
