@@ -1,9 +1,12 @@
 import {Component, EventEmitter, inject, Input, Output} from '@angular/core';
 import {TasksService} from '../task.service';
+import {FormsModule} from '@angular/forms';
 
 @Component({
   selector: 'app-new-task',
-  imports: [],
+  imports: [
+    FormsModule
+  ],
   templateUrl: './new-task.html',
   styleUrl: './new-task.css'
 })
@@ -21,7 +24,7 @@ export class NewTask {
     this.close.emit();
   }
 
-  addTask() {
+  onAddTask() {
     this.taskService.addTask({
       title: this.enteredTitle,
       summary: this.enteredSummary,
